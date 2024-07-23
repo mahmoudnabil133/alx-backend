@@ -1,5 +1,5 @@
 """
-implement fifo cache
+implement lifo cache
 """
 from base_caching import BaseCaching
 from collections import OrderedDict
@@ -7,7 +7,7 @@ from collections import OrderedDict
 
 class LIFOCache(BaseCaching):
     """
-    fifo class to implement fifo cach
+    lifo class to implement lifo cach
     """
 
     def __init__(self):

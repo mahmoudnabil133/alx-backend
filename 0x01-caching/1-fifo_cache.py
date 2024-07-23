@@ -19,14 +19,12 @@ class FIFOCache(BaseCaching):
         "define put method"
         if not key or not item:
             return
-        # if not self.cache_data.get(key):
-        if len(self.cache_data) > FIFOCache.MAX_ITEMS:
-            removed = self.cache_data.popitem(0)
-            print(f'DISCARD: {removed[0]}')
+        if not self.cache_data.get(key):
+            if len(self.cache_data) >= FIFOCache.MAX_ITEMS:
+                removed = self.cache_data.popitem(0)
+                print(f'DISCARD: {removed[0]}')
         self.cache_data[key] = item
 
     def get(self, key):
         "(hit) get item from cache"
-        if not key or not self.cahce_data.get(key):
-            return None
-        return self.cache_data[key]
+        return self.cache_data.get(key, None)

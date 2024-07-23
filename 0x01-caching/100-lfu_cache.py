@@ -26,16 +26,19 @@ class DlinkedList:
         self.tail.prev = self.tail
 
     def add_from_head(self, node):
+        "add a node from head"
         node.next = self.head.next
         node.prev = self.head
         self.head.next.prev = node
         self.head.next = node
 
     def remove_node(self, node):
+        "remove node from list"
         node.prev.next = node.next
         node.next.prev = node.prev
 
     def delete_from_tail(self):
+        "remove node from tail of the list"
         if self.head.next == self.tail:
             return -1
         to_remove = self.tail.prev
@@ -43,6 +46,7 @@ class DlinkedList:
         return to_remove
 
     def len(self):
+        "get length of the list"
         cur = self.head
         ans = 0
         while cur:
@@ -51,6 +55,7 @@ class DlinkedList:
         return ans - 2
 
     def is_empty(self):
+        "check if list is impty or not"
         if self.head.next == self.tail:
             return True
         return False
@@ -67,6 +72,7 @@ class LFUCache(BaseCaching):
         self.min_freq = 0
 
     def get(self, key):
+        "get item from lfu cache and update cache frequency"
         if not key or key not in self.cache_data:
             return None
         node = self.cache_nodes[key]
@@ -74,6 +80,7 @@ class LFUCache(BaseCaching):
         return node.value
 
     def put(self, key, value):
+        "update cache frequency or put new item to it"
         if key in self.cache_data:
             node = self.cache_nodes[key]
             node.value = value
@@ -102,6 +109,7 @@ class LFUCache(BaseCaching):
             self.freq_map[1].add_from_head(new_node)
 
     def update(self, node):
+        "update cache"
         old_freq = node.freq
         node.freq += 1
 

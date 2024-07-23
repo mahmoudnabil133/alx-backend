@@ -98,6 +98,7 @@ class LFUCache(BaseCaching):
 
                 del self.cache_nodes[deleted_node.key]
                 del self.cache_data[deleted_node.key]
+                print(f'DISCARD: {deleted_node.key}')
             new_node = Node(key, value)
             self.cache_nodes[key] = new_node
             self.cache_data[key] = new_node.value

@@ -6,6 +6,9 @@ from collections import OrderedDict
 
 
 class FIFOCache(BaseCaching):
+    """
+    fifo class to implement fifo cach
+    """
 
     def __init__(self):
         "init method"

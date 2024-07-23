@@ -31,5 +31,4 @@ class LRUCache(BaseCaching):
         "(hit) get item from cache"
         if self.cache_data.get(key):
             self.cache_data.move_to_end(key)
-            print(self.cache_data)
         return self.cache_data.get(key, None)

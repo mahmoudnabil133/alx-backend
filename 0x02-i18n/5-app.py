@@ -48,6 +48,7 @@ users = {
 
 
 def get_user():
+    "get user from qurey request"
     if request.args.get('login_as'):
         return users.get(int(request.args.get('login_as')))
     return None

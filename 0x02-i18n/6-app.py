@@ -28,7 +28,6 @@ babel = Babel(app)
 def before_request():
     "make g.user has the value of current user"
     g.user = get_user()
-    g.locale = Config.BABEL_DEFAULT_LOCALE
 
 
 @babel.localeselector

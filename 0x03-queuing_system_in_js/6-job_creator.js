@@ -10,9 +10,10 @@ const jop = queue.create('push_notification_code', {
         console.log(`Notification jop created: ${jop.id}`)
     }
   });
-queue.on('jop complete', (id, result)=>{
-    console.log(`Notification job:${id} completed`);
+
+jop.on('complete', ()=>{
+    console.log('Notification jop completed');
 });
-queue.on('jop failed', (id, result)=>{
-    console.log(`Notification job:${id} failed`)
+jop.on('failed', ()=>{
+  console.log('Notification jop failed');
 });

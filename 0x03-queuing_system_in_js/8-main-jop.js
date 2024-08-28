@@ -6,7 +6,7 @@ const queue = kue.createQueue();
 
 const list = [
     {
-        phoneNumber: '4153518780',
+        phoneNumber: '41535187801',
         message: 'This is the code 1234 to verify your account'
     }
 ];
